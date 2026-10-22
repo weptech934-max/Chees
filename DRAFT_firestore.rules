@@ -1,0 +1,116 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net: Default-deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Primitive Helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Blueprint Validation: UserProfile
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['uid', 'displayName', 'rating', 'wins', 'losses', 'draws', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['uid', 'displayName', 'rating', 'wins', 'losses', 'draws', 'createdAt', 'updatedAt'])
+        && data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128 && data.uid.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.uid == request.auth.uid
+        && data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 50
+        && data.rating is number && data.rating >= 100 && data.rating <= 4000
+        && data.wins is number && data.wins >= 0 && data.wins <= 1000000
+        && data.losses is number && data.losses >= 0 && data.losses <= 1000000
+        && data.draws is number && data.draws >= 0 && data.draws <= 1000000
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    // Blueprint Validation: CompletedGame
+    function isValidCompletedGame(data) {
+      return data.keys().hasAll([
+          'gameId', 'ownerUid', 'whiteName', 'blackName',
+          'whiteRating', 'blackRating', 'winner', 'resultReason',
+          'timeControl', 'finalFen', 'pgnMoves', 'status', 'createdAt'
+        ])
+        && data.keys().hasOnly([
+          'gameId', 'ownerUid', 'whiteName', 'blackName',
+          'whiteRating', 'blackRating', 'winner', 'resultReason',
+          'timeControl', 'finalFen', 'pgnMoves', 'status', 'createdAt'
+        ])
+        && data.gameId is string && data.gameId.size() >= 1 && data.gameId.size() <= 128 && data.gameId.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.ownerUid is string && data.ownerUid.size() >= 1 && data.ownerUid.size() <= 128 && data.ownerUid.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.ownerUid == request.auth.uid
+        && data.whiteName is string && data.whiteName.size() >= 1 && data.whiteName.size() <= 50
+        && data.blackName is string && data.blackName.size() >= 1 && data.blackName.size() <= 50
+        && data.whiteRating is number && data.whiteRating >= 100 && data.whiteRating <= 4000
+        && data.blackRating is number && data.blackRating >= 100 && data.blackRating <= 4000
+        && data.winner is string && data.winner.size() >= 1 && data.winner.size() <= 10 && (data.winner == 'w' || data.winner == 'b' || data.winner == 'draw')
+        && data.resultReason is string && data.resultReason.size() >= 1 && data.resultReason.size() <= 40
+        && data.timeControl is string && data.timeControl.size() >= 1 && data.timeControl.size() <= 30
+        && data.finalFen is string && data.finalFen.size() >= 10 && data.finalFen.size() <= 200
+        && data.pgnMoves is string && data.pgnMoves.size() >= 0 && data.pgnMoves.size() <= 5000
+        && data.status is string && data.status.size() == 9 && data.status == 'completed'
+        && data.createdAt is timestamp;
+    }
+
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false;
+      allow create: if isVerified()
+        && isOwner(userId)
+        && isValidId(userId)
+        && isValidUserProfile(incoming())
+        && incoming().uid == userId
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+      allow update: if isVerified()
+        && isOwner(userId)
+        && isValidId(userId)
+        && isValidUserProfile(incoming())
+        && incoming().uid == existing().uid
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          // Action: UpdateStatsAndProfile
+          incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'rating', 'wins', 'losses', 'draws', 'updatedAt'])
+        );
+      allow delete: if false;
+    }
+
+    match /games/{gameId} {
+      allow get: if isSignedIn() && isValidId(gameId) && existing().ownerUid == request.auth.uid;
+      allow list: if isSignedIn() && existing().ownerUid == request.auth.uid;
+      allow create: if isVerified()
+        && isValidId(gameId)
+        && isValidCompletedGame(incoming())
+        && incoming().gameId == gameId
+        && incoming().createdAt == request.time
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid));
+      // Terminal state locking: completed games are immutable
+      allow update: if false;
+      allow delete: if false;
+    }
+  }
+}

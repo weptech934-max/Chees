@@ -1,0 +1,463 @@
+{
+  "users": {
+    "usr_carlsen_gm": {
+      "id": "usr_carlsen_gm",
+      "username": "Magnus_Valkyrie",
+      "passwordHash": "dc4425632d1d253f2db015e8b36c7c418147ffef3a3df60b9d95a0a161156828",
+      "rating": 1840,
+      "wins": 42,
+      "losses": 6,
+      "draws": 5,
+      "createdAt": "2026-10-22T19:15:45.337Z",
+      "updatedAt": "2026-10-22T19:15:45.337Z"
+    },
+    "usr_polgar_gm": {
+      "id": "usr_polgar_gm",
+      "username": "Judit_Tactics",
+      "passwordHash": "dc4425632d1d253f2db015e8b36c7c418147ffef3a3df60b9d95a0a161156828",
+      "rating": 1765,
+      "wins": 34,
+      "losses": 9,
+      "draws": 4,
+      "createdAt": "2026-10-22T19:15:45.337Z",
+      "updatedAt": "2026-10-22T19:15:45.337Z"
+    },
+    "usr_hikaru_blitz": {
+      "id": "usr_hikaru_blitz",
+      "username": "PineappleBlitz",
+      "passwordHash": "dc4425632d1d253f2db015e8b36c7c418147ffef3a3df60b9d95a0a161156828",
+      "rating": 1710,
+      "wins": 29,
+      "losses": 11,
+      "draws": 3,
+      "createdAt": "2026-10-22T19:15:45.337Z",
+      "updatedAt": "2026-10-22T19:15:45.337Z"
+    },
+    "usr_firouzja_26": {
+      "id": "usr_firouzja_26",
+      "username": "Alireza_Mirage",
+      "passwordHash": "dc4425632d1d253f2db015e8b36c7c418147ffef3a3df60b9d95a0a161156828",
+      "rating": 1625,
+      "wins": 21,
+      "losses": 10,
+      "draws": 2,
+      "createdAt": "2026-10-22T19:15:45.337Z",
+      "updatedAt": "2026-10-22T19:15:45.337Z"
+    },
+    "usr_bd9b94424d62": {
+      "id": "usr_bd9b94424d62",
+      "username": "Grandmaster_653",
+      "passwordHash": "f3a02ba1f76b9fdae93b026b1a377c9b0848c44383bbe6b853e51580da41b2aa",
+      "rating": 1200,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "createdAt": "2026-10-22T19:16:12.175Z",
+      "updatedAt": "2026-10-22T19:16:12.175Z"
+    },
+    "usr_9ddbb2558931": {
+      "id": "usr_9ddbb2558931",
+      "username": "Grandmaster_523",
+      "passwordHash": "aafbdefbf7ed809032d4588c2c0d1043ccd1abd736651a86f03eb423feee05ba",
+      "rating": 1200,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "createdAt": "2026-10-22T19:16:24.290Z",
+      "updatedAt": "2026-10-22T19:16:24.290Z"
+    },
+    "usr_d774ab644e01": {
+      "id": "usr_d774ab644e01",
+      "username": "Grandmaster_325",
+      "passwordHash": "37920e59d7988fee1627ee91a9e0d919cf3dd63304f24c822ec9596c0d92071c",
+      "rating": 1184,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "createdAt": "2026-10-22T19:18:51.711Z",
+      "updatedAt": "2026-10-22T19:19:16.946Z"
+    },
+    "usr_6e024a1308cb": {
+      "id": "usr_6e024a1308cb",
+      "username": "Grandmaster_591",
+      "passwordHash": "c9d67c743657d7886312b68c1cc41748c699e7d98638eb0b9777e706a91f314e",
+      "rating": 1216,
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "createdAt": "2026-10-22T19:18:59.750Z",
+      "updatedAt": "2026-10-22T19:19:16.946Z"
+    },
+    "usr_a824c57a979b": {
+      "id": "usr_a824c57a979b",
+      "username": "Grandmaster_462",
+      "passwordHash": "d6af0f8871fa1c14897f7c3b869e4a329b2ee6b56cdc3bb24f28f46170c4d74c",
+      "rating": 1200,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "createdAt": "2026-10-22T19:21:22.553Z",
+      "updatedAt": "2026-10-22T19:21:22.553Z"
+    }
+  },
+  "tokens": {
+    "tok_bfc368ee8b85d587d802a83148cc7da7c10d": "usr_bd9b94424d62",
+    "tok_3fae7ea3105a9538e2bef59ccd08594d382c": "usr_9ddbb2558931",
+    "tok_79a7a6f5f4be5fe338c3f3d2cfe4c76b2c76": "usr_d774ab644e01",
+    "tok_5e2191ce0b701c25b2135f86e5a41c7a7e3e": "usr_6e024a1308cb",
+    "tok_b6e5a206ac8e4e37200099d803e4945d5ece": "usr_a824c57a979b"
+  },
+  "games": [
+    {
+      "id": "game_BA5YCM_1792696756946",
+      "roomCode": "BA5YCM",
+      "whiteId": "usr_d774ab644e01",
+      "whiteName": "Grandmaster_325",
+      "whiteRatingBefore": 1200,
+      "whiteRatingAfter": 1184,
+      "blackId": "usr_6e024a1308cb",
+      "blackName": "Grandmaster_591",
+      "blackRatingBefore": 1200,
+      "blackRatingAfter": 1216,
+      "winner": "b",
+      "resultReason": "checkmate",
+      "timeControl": {
+        "id": "rapid_10_0",
+        "label": "10 + 0",
+        "category": "Rapid",
+        "initialMs": 600000,
+        "incrementMs": 0,
+        "description": "10 min standard rapid"
+      },
+      "moves": [
+        {
+          "from": "f2",
+          "to": "f3",
+          "piece": "p",
+          "color": "w",
+          "san": "f3",
+          "fenAfter": "rnbqkbnr/pppppppp/8/8/8/5P2/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+          "inCheckAfter": false,
+          "timestamp": 1792696746738
+        },
+        {
+          "from": "e7",
+          "to": "e5",
+          "piece": "p",
+          "color": "b",
+          "san": "e5",
+          "fenAfter": "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq e6 0 2",
+          "inCheckAfter": false,
+          "timestamp": 1792696749844
+        },
+        {
+          "from": "g2",
+          "to": "g4",
+          "piece": "p",
+          "color": "w",
+          "san": "g4",
+          "fenAfter": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq g3 0 2",
+          "inCheckAfter": false,
+          "timestamp": 1792696752880
+        },
+        {
+          "from": "d8",
+          "to": "h4",
+          "piece": "q",
+          "color": "b",
+          "san": "Qh4#",
+          "fenAfter": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+          "inCheckAfter": true,
+          "timestamp": 1792696756946
+        }
+      ],
+      "finalFen": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+      "finishedAt": "2026-10-22T19:19:16.946Z"
+    },
+    {
+      "id": "game_seed_italian_01",
+      "roomCode": "GM901A",
+      "whiteId": "usr_carlsen_gm",
+      "whiteName": "Magnus_Valkyrie",
+      "whiteRatingBefore": 1828,
+      "whiteRatingAfter": 1840,
+      "blackId": "usr_polgar_gm",
+      "blackName": "Judit_Tactics",
+      "blackRatingBefore": 1777,
+      "blackRatingAfter": 1765,
+      "winner": "w",
+      "resultReason": "resignation",
+      "timeControl": {
+        "id": "blitz_3_2",
+        "label": "3 + 2",
+        "category": "Blitz",
+        "initialMs": 180000,
+        "incrementMs": 2000,
+        "description": "3 min + 2s FIDE blitz"
+      },
+      "moves": [
+        {
+          "from": "e2",
+          "to": "e4",
+          "piece": "p",
+          "color": "w",
+          "san": "e4",
+          "fenAfter": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+          "inCheckAfter": false,
+          "timestamp": 1792696545341
+        },
+        {
+          "from": "e7",
+          "to": "e5",
+          "piece": "p",
+          "color": "b",
+          "san": "e5",
+          "fenAfter": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2",
+          "inCheckAfter": false,
+          "timestamp": 1792696545343
+        },
+        {
+          "from": "g1",
+          "to": "f3",
+          "piece": "n",
+          "color": "w",
+          "san": "Nf3",
+          "fenAfter": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+          "inCheckAfter": false,
+          "timestamp": 1792696545345
+        },
+        {
+          "from": "b8",
+          "to": "c6",
+          "piece": "n",
+          "color": "b",
+          "san": "Nc6",
+          "fenAfter": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+          "inCheckAfter": false,
+          "timestamp": 1792696545346
+        },
+        {
+          "from": "f1",
+          "to": "c4",
+          "piece": "b",
+          "color": "w",
+          "san": "Bc4",
+          "fenAfter": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+          "inCheckAfter": false,
+          "timestamp": 1792696545349
+        },
+        {
+          "from": "f8",
+          "to": "c5",
+          "piece": "b",
+          "color": "b",
+          "san": "Bc5",
+          "fenAfter": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+          "inCheckAfter": false,
+          "timestamp": 1792696545351
+        },
+        {
+          "from": "d2",
+          "to": "d3",
+          "piece": "p",
+          "color": "w",
+          "san": "d3",
+          "fenAfter": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4",
+          "inCheckAfter": false,
+          "timestamp": 1792696545352
+        },
+        {
+          "from": "g8",
+          "to": "f6",
+          "piece": "n",
+          "color": "b",
+          "san": "Nf6",
+          "fenAfter": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 1 5",
+          "inCheckAfter": false,
+          "timestamp": 1792696545357
+        },
+        {
+          "from": "e1",
+          "to": "g1",
+          "piece": "k",
+          "color": "w",
+          "isCastleKingside": true,
+          "san": "O-O",
+          "fenAfter": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 b kq - 2 5",
+          "inCheckAfter": false,
+          "timestamp": 1792696545359
+        },
+        {
+          "from": "d7",
+          "to": "d6",
+          "piece": "p",
+          "color": "b",
+          "san": "d6",
+          "fenAfter": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 w kq - 0 6",
+          "inCheckAfter": false,
+          "timestamp": 1792696545360
+        },
+        {
+          "from": "c1",
+          "to": "g5",
+          "piece": "b",
+          "color": "w",
+          "san": "Bg5",
+          "fenAfter": "r1bqk2r/ppp2ppp/2np1n2/2b1p1B1/2B1P3/3P1N2/PPP2PPP/RN1Q1RK1 b kq - 1 6",
+          "inCheckAfter": false,
+          "timestamp": 1792696545363
+        },
+        {
+          "from": "h7",
+          "to": "h6",
+          "piece": "p",
+          "color": "b",
+          "san": "h6",
+          "fenAfter": "r1bqk2r/ppp2pp1/2np1n1p/2b1p1B1/2B1P3/3P1N2/PPP2PPP/RN1Q1RK1 w kq - 0 7",
+          "inCheckAfter": false,
+          "timestamp": 1792696545365
+        },
+        {
+          "from": "g5",
+          "to": "h4",
+          "piece": "b",
+          "color": "w",
+          "san": "Bh4",
+          "fenAfter": "r1bqk2r/ppp2pp1/2np1n1p/2b1p3/2B1P2B/3P1N2/PPP2PPP/RN1Q1RK1 b kq - 1 7",
+          "inCheckAfter": false,
+          "timestamp": 1792696545368
+        },
+        {
+          "from": "g7",
+          "to": "g5",
+          "piece": "p",
+          "color": "b",
+          "san": "g5",
+          "fenAfter": "r1bqk2r/ppp2p2/2np1n1p/2b1p1p1/2B1P2B/3P1N2/PPP2PPP/RN1Q1RK1 w kq g6 0 8",
+          "inCheckAfter": false,
+          "timestamp": 1792696545370
+        },
+        {
+          "from": "h4",
+          "to": "g3",
+          "piece": "b",
+          "color": "w",
+          "san": "Bg3",
+          "fenAfter": "r1bqk2r/ppp2p2/2np1n1p/2b1p1p1/2B1P3/3P1NB1/PPP2PPP/RN1Q1RK1 b kq - 1 8",
+          "inCheckAfter": false,
+          "timestamp": 1792696545372
+        },
+        {
+          "from": "e8",
+          "to": "g8",
+          "piece": "k",
+          "color": "b",
+          "isCastleKingside": true,
+          "san": "O-O",
+          "fenAfter": "r1bq1rk1/ppp2p2/2np1n1p/2b1p1p1/2B1P3/3P1NB1/PPP2PPP/RN1Q1RK1 w - - 2 9",
+          "inCheckAfter": false,
+          "timestamp": 1792696545373
+        }
+      ],
+      "finalFen": "r1bq1rk1/ppp2p2/2np1n1p/2b1p1p1/2B1P3/3P1NB1/PPP2PPP/RN1Q1RK1 w - - 2 9",
+      "finishedAt": "2026-10-22T18:57:45.390Z"
+    },
+    {
+      "id": "game_seed_scholar_02",
+      "roomCode": "GM404B",
+      "whiteId": "usr_hikaru_blitz",
+      "whiteName": "PineappleBlitz",
+      "whiteRatingBefore": 1696,
+      "whiteRatingAfter": 1710,
+      "blackId": "usr_firouzja_26",
+      "blackName": "Alireza_Mirage",
+      "blackRatingBefore": 1639,
+      "blackRatingAfter": 1625,
+      "winner": "w",
+      "resultReason": "checkmate",
+      "timeControl": {
+        "id": "bullet_1_0",
+        "label": "1 + 0",
+        "category": "Bullet",
+        "initialMs": 60000,
+        "incrementMs": 0,
+        "description": "1 min ultra-fast sprint"
+      },
+      "moves": [
+        {
+          "from": "e2",
+          "to": "e4",
+          "piece": "p",
+          "color": "w",
+          "san": "e4",
+          "fenAfter": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+          "inCheckAfter": false,
+          "timestamp": 1792696545377
+        },
+        {
+          "from": "e7",
+          "to": "e5",
+          "piece": "p",
+          "color": "b",
+          "san": "e5",
+          "fenAfter": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2",
+          "inCheckAfter": false,
+          "timestamp": 1792696545378
+        },
+        {
+          "from": "f1",
+          "to": "c4",
+          "piece": "b",
+          "color": "w",
+          "san": "Bc4",
+          "fenAfter": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2",
+          "inCheckAfter": false,
+          "timestamp": 1792696545380
+        },
+        {
+          "from": "b8",
+          "to": "c6",
+          "piece": "n",
+          "color": "b",
+          "san": "Nc6",
+          "fenAfter": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3",
+          "inCheckAfter": false,
+          "timestamp": 1792696545382
+        },
+        {
+          "from": "d1",
+          "to": "h5",
+          "piece": "q",
+          "color": "w",
+          "san": "Qh5",
+          "fenAfter": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+          "inCheckAfter": false,
+          "timestamp": 1792696545384
+        },
+        {
+          "from": "g8",
+          "to": "f6",
+          "piece": "n",
+          "color": "b",
+          "san": "Nf6",
+          "fenAfter": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+          "inCheckAfter": false,
+          "timestamp": 1792696545386
+        },
+        {
+          "from": "h5",
+          "to": "f7",
+          "piece": "q",
+          "color": "w",
+          "captured": "p",
+          "san": "Qxf7#",
+          "fenAfter": "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+          "inCheckAfter": true,
+          "timestamp": 1792696545390
+        }
+      ],
+      "finalFen": "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+      "finishedAt": "2026-10-22T18:33:45.390Z"
+    }
+  ]
+}

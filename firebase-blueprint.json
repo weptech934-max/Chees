@@ -1,0 +1,156 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Public chess contender profile and rating statistics",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Unique user identifier matching auth UID",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Player display name",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "rating": {
+          "type": "number",
+          "description": "Current ELO rating"
+        },
+        "wins": {
+          "type": "number",
+          "description": "Total games won"
+        },
+        "losses": {
+          "type": "number",
+          "description": "Total games lost"
+        },
+        "draws": {
+          "type": "number",
+          "description": "Total games drawn"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp"
+        }
+      },
+      "required": ["uid", "displayName", "rating", "wins", "losses", "draws", "createdAt", "updatedAt"]
+    },
+    "CompletedGame": {
+      "title": "CompletedGame",
+      "description": "Archived multiplayer chess match record",
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "string",
+          "description": "Unique match ID",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerUid": {
+          "type": "string",
+          "description": "Authenticated user UID who recorded this match",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "whiteName": {
+          "type": "string",
+          "description": "White player name",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "blackName": {
+          "type": "string",
+          "description": "Black player name",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "whiteRating": {
+          "type": "number",
+          "description": "White player rating at match end"
+        },
+        "blackRating": {
+          "type": "number",
+          "description": "Black player rating at match end"
+        },
+        "winner": {
+          "type": "string",
+          "description": "Match winner ('w', 'b', or 'draw')",
+          "enum": ["w", "b", "draw"]
+        },
+        "resultReason": {
+          "type": "string",
+          "description": "Reason the game ended",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "timeControl": {
+          "type": "string",
+          "description": "Time control label",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "finalFen": {
+          "type": "string",
+          "description": "Final board FEN string",
+          "minLength": 10,
+          "maxLength": 200
+        },
+        "pgnMoves": {
+          "type": "string",
+          "description": "Space-separated SAN move list",
+          "minLength": 0,
+          "maxLength": 5000
+        },
+        "status": {
+          "type": "string",
+          "description": "Terminal status ('completed')",
+          "enum": ["completed"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        }
+      },
+      "required": [
+        "gameId",
+        "ownerUid",
+        "whiteName",
+        "blackName",
+        "whiteRating",
+        "blackRating",
+        "winner",
+        "resultReason",
+        "timeControl",
+        "finalFen",
+        "pgnMoves",
+        "status",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Stores contender profile and rating stats for each user"
+    },
+    "/games/{gameId}": {
+      "schema": { "$ref": "#/entities/CompletedGame" },
+      "description": "Stores completed chess games archived by a user"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Grandmaster Arena",
+  "description": "Real-time online multiplayer chess platform with matchmaking, private rooms, live spectator mode, ELO ratings, and interactive post-game analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
